@@ -1,0 +1,358 @@
+/* CSS Document */
+/* 攻略页专属样式 */
+
+/* 攻略导航 */
+.strategy-nav {
+    padding: 40px 0;
+    background-color: var(--secondary-dark);
+    border-bottom: 2px solid var(--accent-red);
+}
+
+.strategy-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border: 2px solid var(--card-border);
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 16px;
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.tab-btn:hover {
+    background-color: rgba(139, 0, 0, 0.2);
+    border-color: var(--accent-red);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+/* 攻略内容 */
+.strategy-content {
+    padding: 60px 0;
+    background-color: var(--primary-dark);
+    min-height: 600px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.strategy-title {
+    color: var(--accent-gold);
+    font-family: 'Gothic', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.strategy-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-red);
+}
+
+/* 基础知识 */
+.basics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.basic-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid var(--card-border);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.basic-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+}
+
+.basic-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-red-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.basic-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.basic-card h3 {
+    color: var(--accent-gold);
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Gothic', sans-serif;
+}
+
+.basic-card p {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.basic-card ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+.basic-card li {
+    color: var(--text-gray);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.basic-card li::before {
+    content: '?';
+    color: var(--accent-red);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* 技巧卡片 */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.tip-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+}
+
+.tip-card h3 {
+    background-color: rgba(139, 0, 0, 0.2);
+    color: var(--accent-gold);
+    padding: 20px;
+    margin: 0;
+    font-family: 'Gothic', sans-serif;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--accent-red);
+}
+
+.tip-content {
+    padding: 25px;
+}
+
+.tip-content h4 {
+    color: var(--accent-red-light);
+    font-size: 18px;
+    margin: 20px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.tip-content h4:first-child {
+    margin-top: 0;
+}
+
+.tip-content p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* 地图解析 */
+.maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.map-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.map-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+}
+
+.map-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.map-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.map-card:hover .map-image img {
+    transform: scale(1.1);
+}
+
+.map-info {
+    padding: 25px;
+}
+
+.map-info h3 {
+    color: var(--accent-gold);
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Gothic', sans-serif;
+}
+
+.map-info p {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.map-info strong {
+    color: var(--accent-red-light);
+}
+
+/* 地图对比表格 */
+.map-comparison {
+    margin-top: 50px;
+}
+
+.map-comparison h3 {
+    color: var(--accent-gold);
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Gothic', sans-serif;
+}
+
+.map-comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-comparison th {
+    background-color: var(--accent-red);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.map-comparison td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+    color: var(--text-gray);
+}
+
+.map-comparison tr:hover {
+    background-color: rgba(139, 0, 0, 0.05);
+}
+
+.map-comparison tr:last-child td {
+    border-bottom: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .strategy-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .basics-grid,
+    .tips-grid,
+    .maps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-comparison table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .tip-card h3 {
+        font-size: 18px;
+    }
+    
+    .strategy-title {
+        font-size: 26px;
+    }
+}

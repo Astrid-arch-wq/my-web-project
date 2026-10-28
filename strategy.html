@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攻略指南 - 第五人格</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/strategy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        @font-face {
+    font-family: 'Gothic';
+    src: local('Microsoft YaHei'), local('SimHei');
+    /* 这样即使fonts/Gothic.ttf有问题，也会使用系统字体 */
+}    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="第五人格">
+                <h1>第五人格</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="characters.html"><i class="fas fa-user"></i> 角色图鉴</a></li>
+                <li><a href="strategy.html" class="active"><i class="fas fa-book"></i> 攻略指南</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> 关于网站</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 攻略页角色区域 -->
+    <section class="strategy-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>攻略指南</h2>
+            <p>掌握游戏技巧，提升对战水平</p>
+        </div>
+    </section>
+
+    <!-- 攻略导航 -->
+    <section class="strategy-nav">
+        <div class="container">
+            <div class="strategy-tabs">
+                <button class="tab-btn active" data-tab="basics">基础知识</button>
+                <button class="tab-btn" data-tab="survivor-tips">求生者技巧</button>
+                <button class="tab-btn" data-tab="hunter-tips">监管者技巧</button>
+                <button class="tab-btn" data-tab="maps">地图解析</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 攻略内容 -->
+    <section class="strategy-content">
+        <div class="container">
+            <!-- 基础知识 -->
+            <div class="tab-content active" id="basics">
+                <h2 class="strategy-title">游戏基础知识</h2>
+                <div class="basics-grid">
+                    <div class="basic-card">
+                        <div class="basic-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>游戏目标</h3>
+                        <p><strong>求生者：</strong>破译5台密码机，打开大门逃脱</p>
+                        <p><strong>监管者：</strong>阻止求生者逃脱，淘汰所有求生者</p>
+                    </div>
+                    <div class="basic-card">
+                        <div class="basic-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>地图要素</h3>
+                        <ul>
+                            <li>密码机 - 破译后开启大门</li>
+                            <li>狂欢之椅 - 监管者淘汰求生者</li>
+                            <li>箱子 - 可获取道具</li>
+                            <li>地窖 - 最后逃生通道</li>
+                        </ul>
+                    </div>
+                    <div class="basic-card">
+                        <div class="basic-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>基础操作</h3>
+                        <ul>
+                            <li>移动：WASD或方向键</li>
+                            <li>交互：靠近可交互物体</li>
+                            <li>技能：按相应技能键</li>
+                            <li>视角：鼠标或右键拖动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 求生者技巧 -->
+            <div class="tab-content" id="survivor-tips">
+                <h2 class="strategy-title">求生者进阶技巧</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3><i class="fas fa-user-shield"></i> 生存技巧</h3>
+                        <div class="tip-content">
+                            <h4>1. 破译密码机</h4>
+                            <p>注意校准位置，失败会暴露位置给监管者。多人破译速度加快但有上限。</p>
+                            
+                            <h4>2. 团队合作</h4>
+                            <p>及时救援队友，但注意监管者是否在附近守椅。</p>
+                            
+                            <h4>3. 牵制监管者</h4>
+                            <p>利用板窗区与监管者周旋，为队友争取破译时间。</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <h3><i class="fas fa-eye-slash"></i> 隐蔽技巧</h3>
+                        <div class="tip-content">
+                            <h4>1. 心跳提示</h4>
+                            <p>心跳声提示监管者接近，立即寻找掩体或准备逃跑。</p>
+                            
+                            <h4>2. 蹲行隐藏</h4>
+                            <p>蹲下移动可减少声音和可视度，避免被监管者发现。</p>
+                            
+                            <h4>3. 利用障碍物</h4>
+                            <p>建筑物、树木和墙体是躲避监管者视线的有效工具。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 监管者技巧 -->
+            <div class="tab-content" id="hunter-tips">
+                <h2 class="strategy-title">监管者进阶技巧</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3><i class="fas fa-search"></i> 寻找技巧</h3>
+                        <div class="tip-content">
+                            <h4>1. 监听声音</h4>
+                            <p>注意密码机抖动、脚步声和板窗交互声，这些都是求生者的踪迹。</p>
+                            
+                            <h4>2. 巡逻策略</h4>
+                            <p>优先巡逻未破译的密码机区域，阻止求生者快速破译。</p>
+                            
+                            <h4>3. 技能使用</h4>
+                            <p>合理使用角色技能，如杰克的雾刃、红蝶的刹那生灭等。</p>
+                        </div>
+                    </div>
+                    <div class="tip-card">
+                        <h3><i class="fas fa-skull-crossbones"></i> 追击技巧</h3>
+                        <div class="tip-content">
+                            <h4>1. 预判走位</h4>
+                            <p>预测求生者的移动方向，提前拦截或使用技能。</p>
+                            
+                            <h4>2. 守椅策略</h4>
+                            <p>合理守椅，防止求生者被救援，但也要注意其他求生者的破译进度。</p>
+                            
+                            <h4>3. 地形利用</h4>
+                            <p>利用狭窄通道和障碍物限制求生者走位。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 地图解析 -->
+            <div class="tab-content" id="maps">
+                <h2 class="strategy-title">地图解析</h2>
+                <div class="maps-grid">
+                    <div class="map-card">
+                        <div class="map-image">
+                            <img src="images/map1.jpg" alt="军工厂">
+                        </div>
+                        <div class="map-info">
+                            <h3>军工厂</h3>
+                            <p><strong>特点：</strong>中型地图，板窗区分布均匀，适合新手熟悉游戏</p>
+                            <p><strong>关键位置：</strong>工厂内部、无敌房、小木屋</p>
+                            <p><strong>攻略：</strong>求生者可以利用工厂内复杂的板窗区牵制监管者</p>
+                        </div>
+                    </div>
+                    <div class="map-card">
+                        <div class="map-image">
+                            <img src="images/map2.jpg" alt="圣心医院">
+                        </div>
+                        <div class="map-info">
+                            <h3>圣心医院</h3>
+                            <p><strong>特点：</strong>医院建筑复杂，外部空旷，地形差异大</p>
+                            <p><strong>关键位置：</strong>医院二楼、鸟笼、废墟</p>
+                            <p><strong>攻略：</strong>利用医院二楼复杂地形进行牵制，注意外部空旷区域</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-comparison">
+                    <h3>地图对比分析</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>地图名称</th>
+                                <th>大小</th>
+                                <th>复杂度</th>
+                                <th>适合角色</th>
+                                <th>难度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>军工厂</td>
+                                <td>中型</td>
+                                <td>中等</td>
+                                <td>所有角色</td>
+                                <td>初级</td>
+                            </tr>
+                            <tr>
+                                <td>圣心医院</td>
+                                <td>大型</td>
+                                <td>高</td>
+                                <td>祭司、前锋</td>
+                                <td>中级</td>
+                            </tr>
+                            <tr>
+                                <td>红教堂</td>
+                                <td>中型</td>
+                                <td>中等</td>
+                                <td>红蝶、先知</td>
+                                <td>初级</td>
+                            </tr>
+                            <tr>
+                                <td>湖景村</td>
+                                <td>大型</td>
+                                <td>高</td>
+                                <td>宿伞之魂、机械师</td>
+                                <td>高级</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="第五人格">
+                    <h3>第五人格</h3>
+                    <p>非对称对抗竞技手游</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="characters.html">角色图鉴</a></li>
+                        <li><a href="strategy.html">攻略指南</a></li>
+                        <li><a href="about.html">关于网站</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>网站信息</h4>
+                    <p>这是一个《第五人格》主题网站，用于网页设计课程设计。</p>
+                    <p>学号：20244250</p>
+                    <p>姓名：苏慧琳</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 第五人格主题网站 - 课程设计作品 | 本网站仅供学习使用，游戏版权归网易公司所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/strategy.js"></script>
+	<script>
+// 攻略页标签切换功能修复
+(function() {
+    console.log('初始化攻略页标签切换...');
+    
+    // 等待页面完全加载
+    setTimeout(function() {
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        console.log('找到标签按钮:', tabButtons.length);
+        console.log('找到内容区域:', tabContents.length);
+        
+        if (tabButtons.length === 0 || tabContents.length === 0) {
+            console.log('未找到标签按钮或内容区域');
+            return;
+        }
+        
+        // 初始显示第一个标签
+        tabContents.forEach((content, index) => {
+            if (index === 0) {
+                content.classList.add('active');
+                content.style.display = 'block';
+            } else {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            }
+        });
+        
+        // 为每个标签按钮绑定点击事件
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('点击了标签:', this.textContent);
+                
+                // 移除所有按钮的active类
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // 给当前按钮添加active类
+                this.classList.add('active');
+                
+                // 获取要显示的标签ID
+                const tabId = this.getAttribute('data-tab');
+                console.log('要显示的标签ID:', tabId);
+                
+                // 隐藏所有内容，显示对应ID的内容
+                tabContents.forEach(content => {
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                        content.style.display = 'block';
+                        
+                        // 添加显示动画
+                        content.style.opacity = '0';
+                        content.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            content.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            content.style.opacity = '1';
+                            content.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // 测试：自动点击第一个标签
+        console.log('攻略页标签初始化完成');
+        
+        // 添加测试函数
+        window.testTabs = function() {
+            console.log('测试标签切换...');
+            tabButtons.forEach((btn, index) => {
+                setTimeout(() => {
+                    btn.click();
+                    console.log('已触发:', btn.textContent);
+                }, index * 1000);
+            });
+        };
+        
+    }, 200);
+})();
+</script>
+</body>
+</html>

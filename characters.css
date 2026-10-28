@@ -1,0 +1,379 @@
+/* CSS Document */
+
+/* 角色页专属样式 */
+
+/* 角色筛选 */
+.character-filter {
+    padding: 40px 0;
+    background-color: var(--secondary-dark);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border: 2px solid var(--card-border);
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.filter-btn:hover {
+    background-color: rgba(139, 0, 0, 0.2);
+    border-color: var(--accent-red);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+.search-box {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 50px;
+    color: var(--text-light);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+}
+
+.search-box i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+}
+
+/* 角色展示 */
+.characters-showcase {
+    padding: 60px 0;
+    background-color: var(--primary-dark);
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.character-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--card-border);
+    transition: var(--transition);
+    position: relative;
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-red);
+    box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+}
+
+.character-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.1);
+}
+
+.character-role {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hunter .character-role {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+.survivor .character-role {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+.character-info {
+    padding: 25px;
+}
+
+.character-info h3 {
+    color: var(--accent-gold);
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Gothic', sans-serif;
+}
+
+.character-desc {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.character-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    background-color: rgba(139, 0, 0, 0.2);
+    color: var(--accent-red-light);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.detail-btn {
+    width: 100%;
+    background-color: transparent;
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    padding: 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.detail-btn:hover {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+/* 角色模态框 */
+.character-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--secondary-dark);
+    margin: 50px auto;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--accent-red);
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--text-light);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--accent-red);
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.character-modal-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.modal-character-image {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid var(--accent-red);
+}
+
+.modal-character-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-character-info h2 {
+    color: var(--accent-gold);
+    font-family: 'Gothic', sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.character-type {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.type-hunter {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+.type-survivor {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+.character-lore {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.character-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.details-section h3 {
+    color: var(--accent-gold);
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-red);
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-item h4 {
+    color: var(--accent-red-light);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.skill-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.stats-table th {
+    background-color: rgba(139, 0, 0, 0.2);
+    color: var(--accent-gold);
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.stats-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+    color: var(--text-gray);
+}
+
+.stats-table tr:hover {
+    background-color: rgba(139, 0, 0, 0.05);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .character-modal-header {
+        grid-template-columns: 1fr;
+    }
+    
+    .character-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .characters-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 80%;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+}

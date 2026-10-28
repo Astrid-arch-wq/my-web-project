@@ -1,0 +1,28 @@
+/* CSS/* fonts-fix.css - 专门修复首页字体问题 */
+
+/* 方法1: 直接使用系统字体，完全忽略自定义字体 */
+* {
+    font-family: 'Microsoft YaHei', 'SimHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif !important;
+}
+
+/* 方法2: 覆盖所有可能被影响的元素 */
+body, div, span, p, h1, h2, h3, h4, h5, h6, 
+a, li, ul, ol, button, input, textarea,
+.navbar, .hero-content, .section-title,
+.feature-card, .game-intro, .intro-text {
+    font-family: 'Microsoft YaHei', 'SimHei', sans-serif !important;
+}
+
+/* 方法3: 特殊处理标题 */
+.logo h1 {
+    font-family: 'SimHei', 'Microsoft YaHei', sans-serif !important;
+    font-weight: bold;
+}
+
+.hero-content h2,
+.section-title {
+    font-family: 'SimHei', 'Microsoft YaHei', sans-serif !important;
+    font-weight: bold;
+    color: #d4af37;
+} Document */
+

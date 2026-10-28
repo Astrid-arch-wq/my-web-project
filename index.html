@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五人格- 非对称对抗竞技游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: 'msyhl';
+            src: url('fonts/msyhl.ttc') format('truetype collection');
+        }
+    </style>
+</head>
+<body>
+    <!-- 替换原有的音频控制部分 -->
+<div class="audio-control">
+    <button id="musicToggle" style="background:#8b0000; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; display:flex; align-items:center; gap:5px;">
+        <i class="fas fa-volume-mute" id="musicIcon"></i>
+        <span id="musicText">播放音乐</span>
+    </button>
+    <audio id="bgMusic" preload="auto" loop>
+        <source src="audio/bg-music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素
+    </audio>
+    <div id="musicStatus" style="font-size:12px; color:#666; margin-top:5px;"></div>
+</div>
+
+    <!-- ������ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="�����˸�">
+                <h1>第五人格</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="characters.html"><i class="fas fa-user"></i> 角色图鉴</a></li>
+                <li><a href="strategy.html"><i class="fas fa-book"></i> 攻略指南</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> 关于网站</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ӣ������ -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>非对称对抗竞技</h2>
+            <p>在神秘的庄园中，体验追与逃的刺激对决</p>
+            <a href="#intro" class="cta-button">探索游戏世界</a>
+        </div>
+    </section>
+
+    <!-- ��Ϸ���� -->
+    <section class="game-intro" id="intro">
+        <div class="container">
+            <h2 class="section-title">游戏简介</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>维多利亚时代的恐怖美学</h3>
+                    <p>《第五人格》是网易首款非对称性对抗竞技手游。荒诞哥特画风，悬疑烧脑剧情，刺激的1V4"猫鼠追逃游戏"的对抗玩法，都将给玩家带来全新的游戏体验。</p>
+                    <p>玩家将扮演侦探奥尔菲斯，在收到一封神秘的委托信后，进入恶名昭著的庄园调查一件失踪案。在进行证据调查过程中，玩家将选择扮演监管者或求生者，展开激烈的对抗。</p>
+                    <div class="game-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <h4>1v4对抗</h4>
+                            <p>不对称竞技</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-mask"></i>
+                            <h4>多样角色</h4>
+                            <p>超过40个角色</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-map"></i>
+                            <h4>多张地图</h4>
+                            <p>不同场景策略</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="images/home-bg.jpg" alt="第五人格游戏场景">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ��ɫչʾ -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">游戏特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h3>哥特恐怖风格</h3>
+                    <p>维多利亚时代的建筑风格，结合黑暗的童话元素，营造出独特的恐怖美学氛围。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>非对称竞技</h3>
+                    <p>1位监管者对抗4位求生者，双方拥有不同的视角、能力和获胜条件，策略多变。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>烧脑剧情</h3>
+                    <p>碎片化的叙事方式，通过日记、推演和角色故事逐步揭开庄园背后的秘密。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>角色扮演</h3>
+                    <p>每个角色都有独特的背景故事和技能，玩家可以选择扮演侦探、求生者或监管者。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ��Ƶչʾ -->
+    <section class="video-showcase">
+        <div class="container">
+            <h2 class="section-title">游戏宣传视频</h2>
+            <div class="video-container">
+                <video id="gameVideo" controls poster="images/video-poster.jpg">
+                    <source src="video/trailer.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签
+                </video>
+                <div class="video-controls">
+                    <button id="playBtn"><i class="fas fa-play"></i> 播放</button>
+                    <button id="pauseBtn"><i class="fas fa-pause"></i> 暂停</button>
+                    <button id="muteBtn"><i class="fas fa-volume-up"></i> 静音</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ҳ�� -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="第五人格">
+                    <h3>第五人格</h3>
+                    <p>非对称对抗竞技手游</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="characters.html">角色图鉴</a></li>
+                        <li><a href="strategy.html">攻略指南</a></li>
+                        <li><a href="about.html">关于网站</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>网站信息</h4>
+                    <p>这是一个《第五人格》主题网站，用于网页设计课程设计。</p>
+                    <p>学号：20244250</p>
+                    <p>姓名：苏慧琳</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 第五人格主题网站 - 课程设计作品 | 本网站仅供学习使用，游戏版权归网易公司所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+	<script>
+// 强制音频解决方案
+(function() {
+    console.log('执行强制音频修复...');
+    
+    // 创建自己的音频播放器，不依赖外部文件
+    let musicPlaying = false;
+    const audio = new Audio();
+    audio.src = 'audio/bg-music.mp3';
+    audio.volume = 0.3;
+    audio.loop = true;
+    
+    // 创建控制按钮
+    const audioBtn = document.createElement('button');
+    audioBtn.id = 'forceMusicBtn';
+    audioBtn.innerHTML = '🔇 播放音乐';
+    audioBtn.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 15px;
+        z-index: 1001;
+        background: #8b0000;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        font-size: 16px;
+    `;
+    
+    document.body.appendChild(audioBtn);
+    
+    // 点击事件
+    audioBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        if (!musicPlaying) {
+            audio.play()
+                .then(() => {
+                    musicPlaying = true;
+                    audioBtn.innerHTML = '🔊 关闭音乐';
+                    audioBtn.style.background = '#b22222';
+                    console.log('音乐播放成功');
+                })
+                .catch(err => {
+                    console.error('播放失败:', err);
+                    alert('播放失败，请先点击页面任意位置激活音频，然后重试');
+                    
+                    // 添加全局点击激活
+                    const activate = function() {
+                        audio.play()
+                            .then(() => {
+                                musicPlaying = true;
+                                audioBtn.innerHTML = '🔊 关闭音乐';
+                                audioBtn.style.background = '#b22222';
+                            })
+                            .catch(e2 => {
+                                console.error('再次播放失败:', e2);
+                            });
+                        document.removeEventListener('click', activate);
+                    };
+                    
+                    document.addEventListener('click', activate, { once: true });
+                });
+        } else {
+            audio.pause();
+            musicPlaying = false;
+            audioBtn.innerHTML = '🔇 播放音乐';
+            audioBtn.style.background = '#8b0000';
+        }
+    });
+    
+    // 激活音频上下文
+    const activateAudio = function() {
+        console.log('激活音频上下文...');
+        const silent = new Audio();
+        silent.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEAQB8AAEAfAAABAAgAZGF0YQ';
+        silent.play().then(() => silent.pause());
+        document.removeEventListener('click', activateAudio);
+    };
+    
+    document.addEventListener('click', activateAudio, { once: true });
+    
+    console.log('强制音频修复完成');
+})();
+</script>
+</body>
+</html>

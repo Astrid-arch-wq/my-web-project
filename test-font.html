@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字体测试页面</title>
+    <style>
+        body { padding: 20px; }
+        .test-area { 
+            margin: 20px 0; 
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>字体测试页面</h1>
+    
+    <div class="test-area">
+        <h2>测试1: 系统字体</h2>
+        <p style="font-family: 'Microsoft YaHei', 'SimHei', sans-serif;">
+            微软雅黑/黑体: 这是一段测试文字，第五人格游戏介绍。
+        </p>
+    </div>
+    
+    <div class="test-area">
+        <h2>测试2: 自定义字体</h2>
+        <p id="custom-font-test" style="font-family: 'Gothic', sans-serif;">
+            Gothic字体: 这是一段测试文字，第五人格游戏介绍。
+        </p>
+        <button onclick="testCustomFont()">测试自定义字体</button>
+    </div>
+    
+    <div class="test-area">
+        <h2>测试3: 复制index.html的样式</h2>
+        <div id="index-copy"></div>
+        <button onclick="copyIndexStyle()">复制首页样式测试</button>
+    </div>
+    
+    <script>
+        function testCustomFont() {
+            const p = document.getElementById('custom-font-test');
+            const originalText = p.textContent;
+            const testText = '测试字体ABCD123';
+            
+            p.textContent = testText;
+            
+            setTimeout(() => {
+                if (p.offsetWidth < 50) {
+                    alert('自定义字体可能未加载或不可用');
+                } else {
+                    alert('自定义字体看起来正常');
+                }
+                p.textContent = originalText;
+            }, 100);
+        }
+        
+        function copyIndexStyle() {
+            const div = document.getElementById('index-copy');
+            div.innerHTML = `
+                <style>
+                    .test-index {
+                        font-family: 'Gothic', 'Microsoft YaHei', 'SimHei', sans-serif;
+                        padding: 20px;
+                        background: #1a0a1a;
+                        color: #f0f0f0;
+                        border-radius: 10px;
+                    }
+                </style>
+                <div class="test-index">
+                    <h3>模拟首页样式</h3>
+                    <p>这是使用首页相同字体设置的测试内容。</p>
+                    <p>如果这里显示正常，但首页乱码，说明是其他问题。</p>
+                </div>
+            `;
+        }
+        
+        // 测试字体文件是否存在
+        fetch('fonts/Gothic.ttf')
+            .then(response => {
+                console.log('字体文件状态:', response.status);
+                if (response.ok) {
+                    console.log('✅ 字体文件存在');
+                } else {
+                    console.log('❌ 字体文件不存在');
+                }
+            })
+            .catch(error => {
+                console.log('❌ 无法访问字体文件:', error);
+            });
+    </script>
+</body>
+</html>

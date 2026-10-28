@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色图鉴 - 第五人格</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/characters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+@font-face {
+    font-family: 'Gothic';
+    src: local('Microsoft YaHei'), local('SimHei');
+    /* 这样即使fonts/Gothic.ttf有问题，也会使用系统字体 */
+}
+    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="第五人格">
+                <h1>第五人格</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="characters.html" class="active"><i class="fas fa-user"></i> 角色图鉴</a></li>
+                <li><a href="strategy.html"><i class="fas fa-book"></i> 攻略指南</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> 关于网站</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 角色页英雄区域 -->
+    <section class="characters-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>角色图鉴</h2>
+            <p>探索监管者与求生者的独特技能与背景故事</p>
+        </div>
+    </section>
+
+    <!-- 角色筛选 -->
+    <section class="character-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部角色</button>
+                <button class="filter-btn" data-filter="hunter">监管者</button>
+                <button class="filter-btn" data-filter="survivor">求生者</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="characterSearch" placeholder="搜索角色名称...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 角色展示 -->
+    <section class="characters-showcase">
+        <div class="container">
+            <div class="characters-grid" id="charactersGrid">
+                <!-- 监管者角色 -->
+                <div class="character-card hunter" data-name="杰克">
+                    <div class="character-image">
+                        <img src="images/hunter1.jpg" alt="杰克">
+                        <div class="character-role">监管者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>杰克 - 开膛手</h3>
+                        <p class="character-desc">雾气中的隐形杀手，拥有极快的移动速度和隐身能力。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">雾隐</span>
+                            <span class="skill-tag">雾刃</span>
+                            <span class="skill-tag">幽隐</span>
+                        </div>
+                        <button class="detail-btn" data-character="jack">查看详情</button>
+                    </div>
+                </div>
+
+                <div class="character-card hunter" data-name="红蝶">
+                    <div class="character-image">
+                        <img src="images/hunter2.jpg" alt="红蝶">
+                        <div class="character-role">监管者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>红蝶 - 美智子</h3>
+                        <p class="character-desc">优雅的舞者，可以使用刹那生灭快速移动，擅长追击。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">刹那生灭</span>
+                            <span class="skill-tag">离魂移魄</span>
+                            <span class="skill-tag">般若相</span>
+                        </div>
+                        <button class="detail-btn" data-character="red-butterfly">查看详情</button>
+                    </div>
+                </div>
+
+                <div class="character-card hunter" data-name="宿伞之魂">
+                    <div class="character-image">
+                        <img src="images/hunter3.jpg" alt="宿伞之魂">
+                        <div class="character-role">监管者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>宿伞之魂 - 范无咎/谢必安</h3>
+                        <p class="character-desc">拥有黑白双形态，可以切换不同的攻击方式和移动模式。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">摄魂</span>
+                            <span class="skill-tag">荡魄</span>
+                            <span class="skill-tag">双魂</span>
+                        </div>
+                        <button class="detail-btn" data-character="umbrella">查看详情</button>
+                    </div>
+                </div>
+
+                <!-- 求生者角色 -->
+                <div class="character-card survivor" data-name="医生">
+                    <div class="character-image">
+                        <img src="images/survivor1.jpg" alt="医生">
+                        <div class="character-role">求生者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>医生 - 艾米丽·黛儿</h3>
+                        <p class="character-desc">战场医师，可以治疗自己和队友，拥有强大的生存能力。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">医术</span>
+                            <span class="skill-tag">自我治疗</span>
+                            <span class="skill-tag">医药专精</span>
+                        </div>
+                        <button class="detail-btn" data-character="doctor">查看详情</button>
+                    </div>
+                </div>
+
+                <div class="character-card survivor" data-name="空军">
+                    <div class="character-image">
+                        <img src="images/survivor2.jpg" alt="空军">
+                        <div class="character-role">求生者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>空军 - 玛尔塔·贝坦菲尔</h3>
+                        <p class="character-desc">携带信号枪，可以眩晕监管者，为队友争取时间。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">信号枪</span>
+                            <span class="skill-tag">坚强</span>
+                            <span class="skill-tag">军伍情深</span>
+                        </div>
+                        <button class="detail-btn" data-character="air-force">查看详情</button>
+                    </div>
+                </div>
+
+                <div class="character-card survivor" data-name="祭司">
+                    <div class="character-image">
+                        <img src="images/survivor3.jpg" alt="祭司">
+                        <div class="character-role">求生者</div>
+                    </div>
+                    <div class="character-info">
+                        <h3>祭司 - 菲欧娜·吉尔曼</h3>
+                        <p class="character-desc">可以使用门之钥在墙上开辟通道，进行远距离移动。</p>
+                        <div class="character-skills">
+                            <span class="skill-tag">门之钥</span>
+                            <span class="skill-tag">神佑</span>
+                            <span class="skill-tag">羸弱</span>
+                        </div>
+                        <button class="detail-btn" data-character="priestess">查看详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 角色详情模态框 -->
+    <div class="character-modal" id="characterModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="第五人格">
+                    <h3>第五人格</h3>
+                    <p>非对称对抗竞技手游</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="characters.html">角色图鉴</a></li>
+                        <li><a href="strategy.html">攻略指南</a></li>
+                        <li><a href="about.html">关于网站</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>网站信息</h4>
+                    <p>这是一个《第五人格》主题网站，用于网页设计课程设计。</p>
+                    <p>学号：20244250</p>
+                    <p>姓名：苏慧琳</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 第五人格主题网站 - 课程设计作品 | 本网站仅供学习使用，游戏版权归网易公司所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/characters.js"></script>
+	<!-- 在原有的 <script> 标签后面添加 -->
+<script>
+// 强制绑定筛选功能
+(function() {
+    console.log('开始绑定筛选功能...');
+    
+    // 等待页面完全加载
+    setTimeout(function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const characterCards = document.querySelectorAll('.character-card');
+        
+        console.log('找到按钮:', filterButtons.length);
+        console.log('找到卡片:', characterCards.length);
+        
+        // 给每个按钮添加点击事件
+        filterButtons.forEach(button => {
+            // 移除原有的事件监听器（防止重复绑定）
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
+            
+            // 重新绑定事件
+            newButton.addEventListener('click', function() {
+                console.log('点击了按钮:', this.textContent);
+                
+                // 更新按钮状态
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 获取筛选条件
+                const filter = this.getAttribute('data-filter');
+                console.log('筛选条件:', filter);
+                
+                // 筛选卡片
+                characterCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else if (card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        console.log('筛选功能绑定完成');
+    }, 100);
+})();
+</script>
+<script>
+// 查看详情功能修复
+(function() {
+    console.log('初始化详情模态框...');
+    
+    // 等待页面完全加载
+    setTimeout(function() {
+        const detailButtons = document.querySelectorAll('.detail-btn');
+        const closeModal = document.querySelector('.close-modal');
+        const characterModal = document.getElementById('characterModal');
+        
+        console.log('找到详情按钮:', detailButtons.length);
+        console.log('模态框元素:', characterModal);
+        
+        if (detailButtons.length === 0) {
+            console.log('未找到详情按钮，检查HTML结构');
+            return;
+        }
+        
+        // 为每个详情按钮绑定点击事件
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // 防止可能的默认行为
+                event.stopPropagation(); // 防止事件冒泡
+                
+                console.log('点击了查看详情按钮');
+                
+                // 获取角色信息
+                const card = this.closest('.character-card');
+                const charName = card.querySelector('h3').textContent;
+                const charRole = card.querySelector('.character-role').textContent;
+                const charDesc = card.querySelector('.character-desc').textContent;
+                
+                // 构建模态框内容
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = `
+                    <div class="modal-character-header">
+                        <h2>${charName}</h2>
+                        <span class="character-type ${charRole === '监管者' ? 'type-hunter' : 'type-survivor'}">
+                            ${charRole}
+                        </span>
+                    </div>
+                    <div class="modal-character-content">
+                        <div class="modal-character-image">
+                            <img src="${card.querySelector('img').src}" alt="${charName}">
+                        </div>
+                        <div class="modal-character-info">
+                            <h3>角色介绍</h3>
+                            <p>${charDesc}</p>
+                            <h3>技能说明</h3>
+                            <p>技能以实际对局为准。</p>
+                            <h3>使用技巧</h3>
+                            <ul>
+                                <li>技巧1：掌握角色的核心技能时机</li>
+                                <li>技巧2：合理搭配天赋</li>
+                                <li>技巧3：了解角色的优势和劣势</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                
+                // 显示模态框
+                if (characterModal) {
+                    characterModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                    
+                    // 添加动画效果
+                    setTimeout(() => {
+                        characterModal.style.opacity = '1';
+                    }, 10);
+                }
+            });
+        });
+        
+        // 关闭模态框功能
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                if (characterModal) {
+                    characterModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // 点击模态框外部关闭
+        if (characterModal) {
+            characterModal.addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // 按ESC键关闭模态框
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && characterModal.style.display === 'block') {
+                characterModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        console.log('详情模态框初始化完成');
+    }, 200);
+})();
+</script>
+</body>
+</html>
